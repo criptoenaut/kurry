@@ -1,0 +1,348 @@
+*{margin:0;padding:0;font-size:100%;align:center}
+body{ 
+    font: 14px normal Verdana, Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background:#ffffff;
+    text-align:center;
+    color: #333333;
+}
+
+
+// top nav 
+/* CSS Reset */
+h1, h2, h3, h4, p, li, li a {
+    font-family:Arial, Sans-Serif;
+    font-size:15px;
+    font-weight:bold;
+    color:#525252;
+    text-decoration:none;
+}
+
+h1, h2, h3, h4 {
+    font-size:22px;
+}
+textarea.barcode-long {
+    width:600px;
+    height:25px;
+    font-size:15px;
+    font-weight:bold;
+    color:#525252;
+    border-radius:2px;
+}
+input {
+    height:25px;
+    font-size:15px;
+    font-weight:bold;
+    color:#525252;
+    border-radius:2px;
+}
+
+input.text {width:110px;}
+
+input.qty {width:40px;}
+input.barcode-long {width:600px;}
+input.invoiceid{width:100px;}
+input.long{width:240px;}
+input.small{width:80px;}
+input.date{width:100px;}
+
+.select {
+    color: #181818;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+a.action-button {
+    background-color:#FF8000;
+    color:#ffffff;
+    font-weight:bold;
+    font-size:14px;
+    padding:5px 8px;
+    border-radius:5px;
+    text-decoration:none;
+}
+
+a.action-button:hover {
+    color:#181818;
+}
+
+/* The Nav styling starts here, The above code is just to make the page look nice */
+#dropdown_nav {
+    width:960px;
+    padding:0px;
+    margin: 20px 0;
+    display:inline-block;
+    list-style:none;
+    -moz-box-shadow:inset 0px 0px 1px #fff;
+    -webkit-box-shadow:inset 0px 0px 1px #fff;
+    border:1px solid #ccc;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    background:#e2e2e2;
+    background:-moz-linear-gradient(#f3f3f3, #e2e2e2);
+    background:-webkit-gradient(linear, 0 0, 0 100%, from(#f3f3f3), to(#e2e2e2));
+}
+
+#dropdown_nav li {
+    padding:10px 0px 10px 0px;
+    float:left;
+    position:relative;
+    display:inline-block;
+    min-width:110px;
+    border-right:1px solid #CCCCCC;
+    text-align:center;
+}
+
+#dropdown_nav li a {
+    text-shadow:-1px 1px 0px #f6f6f6;
+    -moz-box-shadow:inset 0px 0px 1px #fff;
+    -webkit-box-shadow:inset 0px 0px 1px #fff;
+    color:#181818;
+    text-decoration:none;
+    font-size:16px;
+}
+#dropdown_nav li a:hover {
+    background:#f9f9f9;
+    background:-moz-linear-gradient(#f9f9f9, #e8e8e8);
+    background:-webkit-gradient(linear, 0 0, 0 100%, from(#f9f9f9), to(#e8e8e8));
+}
+#dropdown_nav li a:active {
+    background:#e2e2e2;
+    background:-moz-linear-gradient(#e2e2e2, #f3f3f3);
+    background:-webkit-gradient(linear, 0 0, 0 100%, from(#e2e2e2), to(#f3f3f3));
+}
+
+#dropdown_nav li a.first {
+    -moz-border-radius:5px 0px 0px 5px;
+    -webkit-border-radius:5px 0px 0px 5px;
+}
+
+	 
+/* Sub-Nav styling */
+#dropdown_nav .sub_nav {
+    width:160px;
+    padding:0px;
+    position:absolute;
+    top:38px;
+    left:0px;
+    border:1px solid #ccc;
+    background:#e2e2e2;
+    margin:3px 0 0 0;
+}
+
+#dropdown_nav .sub_nav li {
+    width:160px;
+    padding:0px;
+}
+
+#dropdown_nav .sub_nav li a {
+    display:block;
+    border-bottom:1px solid #ccc;
+    background:-moz-linear-gradient(#f3f3f3, #e2e2e2);
+    background:-webkit-gradient(linear, 0 0, 0 100%, from(#f3f3f3), to(#e2e2e2));
+    padding:15px 2px;
+}
+#dropdown_nav .sub_nav li a:hover {
+    background:#f9f9f9;
+    background:-moz-linear-gradient(#f9f9f9, #e8e8e8);
+    background:-webkit-gradient(linear, 0 0, 0 100%, from(#f9f9f9), to(#e8e8e8));
+}
+#dropdown_nav .sub_nav li a:active {
+    background:#e2e2e2;
+    background:-moz-linear-gradient(#e2e2e2, #f3f3f3);
+    background:-webkit-gradient(linear, 0 0, 0 100%, from(#e2e2e2), to(#f3f3f3));
+}
+   
+// top nav
+
+/** form **/
+
+form.frmlogin fieldset {
+  margin-bottom: 10px;
+  padding:30px;
+  padding-top:10px;
+  border-color:green;
+}
+form.frmlogin legend {
+  padding: 0 2px;
+  font-weight: bold;
+}
+form.frmlogin label {
+  display: inline-block;
+  line-height: 1.8;
+  vertical-align: top;
+}
+form.frmlogin fieldset ol {
+  margin: 0;
+  padding: 0;
+}
+form.frmlogin fieldset li {
+  list-style: none;
+  padding: 5px;
+  margin: 0;
+}
+form.frmlogin fieldset fieldset {
+  border: none;
+  margin: 3px 0 0;
+}
+form.frmlogin fieldset fieldset legend {
+  padding: 0 0 5px;
+  font-weight: normal;
+}
+form.frmlogin fieldset fieldset label {
+  display: block;
+  width: auto;
+}
+form.frmlogin em {
+  font-weight: bold;
+  font-style: normal;
+  color: #f00;
+}
+form.frmlogin label {
+  width: 120px; /* Width of labels */
+}
+form.frmlogin fieldset fieldset label {
+  margin-left: 123px; /* Width plus 3 (html space) */
+}
+
+.auth{
+    margin: 10% auto;
+    width:50%;
+}
+
+.leftsearchform {
+    float:left;
+    margin:5px 0 10px 10px;
+}
+
+.rightsearchform {
+    float:right;
+    margin:5px 20px 10px 0;
+}
+
+.frmheader {
+    background:#E0E9E9;
+    margin:20px;
+    color:#181818;
+    font-weight:bold;
+    font-size:16px;
+    padding:10px; 
+    width:920px; 
+    margin:10px auto 20px auto; 
+    border-radius:5px;
+    text-align:left;
+}
+
+.frmheader label {
+    margin:0 5px 0 15px;
+}
+
+/* Table Sorter */
+
+table.tablesorter {
+    font-family:arial;
+    background-color: #ffffff;
+    margin:10px 0pt 15px;
+    font-size: 10pt;
+    width: 100%;
+    text-align: left;
+}
+table.tablesorter thead tr th, table.tablesorter tfoot tr th {
+    background-color: #e6EEEE;
+    border: 0px solid #FFF;
+    font-size: 10pt;
+    padding: 4px;
+}
+table.tablesorter thead tr td, table.tablesorter tfoot tr td {
+    background-color: #e6EEEE;
+    border: 0px solid #FFF;
+    font-size: 10pt;
+    padding: 4px;
+}
+table.tablesorter thead tr.tsearch td, table.tablesorter tfoot tr.tsearch td{
+    background-color: #cfcfcf;
+    border: 0px solid #FFF;
+    font-size: 10pt;
+    padding: 4px;
+}
+table.tablesorter thead tr .header {
+    background-image: url(../assets/bg.gif);
+    background-repeat: no-repeat;
+    background-position: center right;
+    cursor: pointer;
+}
+table.tablesorter tbody td {
+    color: #3D3D3D;
+    padding: 4px;
+    background-color: #FFF;
+    vertical-align: top;
+}
+table.tablesorter tbody tr.odd td {
+    background-color:#F0F0F6;
+    font-size: 10pt;
+    font-weight:'bold';
+}
+table.tablesorter tbody tr.even td {
+    background-color:#ffffff;
+    font-size: 10pt;
+    font-weight:'bold';
+}
+table.tablesorter tbody tr.odd td img {
+    height:20px;
+    width:20px;
+}
+table.tablesorter tbody tr.even td img {
+    height:20px;
+    width:20px;
+}
+table.tablesorter thead tr .headerSortUp {
+    background-image: url(../assets/asc.gif);
+}
+table.tablesorter thead tr .headerSortDown {
+    background-image: url(../assets/desc.gif);
+}
+table.tablesorter thead tr .headerSortDown, table.tablesorter thead tr .headerSortUp {
+    background-color: #8dbdd8;
+}
+
+/* Table Sorter */
+
+/* messages */
+.error-message {
+    color:red;
+    font-size:14px;
+    font-weight:bold;
+    margin:10 auto;
+}
+.status-message {
+    color:green;
+    font-size:14px;
+    font-weight:bold;
+    margin:10 auto;
+}
+
+.toast{
+	/* border properties */
+	border-radius: 4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; border: 0px solid #CCCCCC;
+	/* Aesthetics */
+	position: absolute; padding: 20px; color: #ffffff; background-color:rgba(0,0,0, 0.8); display:none;
+	font-size:20px; font-family:Verdana,Helvetica,Arial; font-weight:bold; opacity:0.7;
+}
+
+/* messages */
+
+/* Switch Styles
+---------------------------------------- */
+.js .checkbox{
+    display:none;
+}
+.toggle{
+    background:url("/assets/toggle.png") bottom right;
+    display:inline-block;
+    width:70px;
+    height:22px;
+}
+.toggle.checked{
+    background-position:top left;
+}
