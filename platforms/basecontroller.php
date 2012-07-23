@@ -26,6 +26,10 @@ class BaseController
     $this->results = array();
   }
 
+  /*!
+   * \brief Method to get POST/GET variables. Stores filtered variables in class attribute $params
+   * \return Array of key value pairs received using POST/GET
+   */
   public function getParams()
   {
     foreach($_GET as $key => $value)
@@ -125,14 +129,24 @@ class BaseController
     return True;
   }
 
+  /*!
+   * \brief Method to set Flash variables as session variable
+   * \return Boolean True on success
+   */
   public function pushFlashToSession()
   {
     $this->setSession('flash', $this->flash);
+    return true;
   }
 
+  /*!
+   * \brief Method to remove Flash variables from session
+   * \return Boolean True on success
+   */
   public function cleanUp()
   {
     unset($_SESSION['flash']);
+    return true;
   }
  
   /*!
@@ -171,24 +185,6 @@ class BaseController
     exit;
   } 
 
-
-  public function forward($action, $controller = '')
-  {
-    if(empty($action) && empty($controller))
-      {
-	//header("Location: ".BASE_URL);
-      }
-    elseif(!empty($controller) && !empty($action))
-      {
-	$obj = new $controller();
-	// set the smarty variables    
-	$obj->{$action}();
-      }
-    global $app;
-    $app = &$app;
-    $app->cleanUp();
-    exit;
-  }
 
   /*!
    * \brief Method to include JS and CSS scripts for a particular action
@@ -230,21 +226,6 @@ class BaseController
     return True;
   }
 
-  /*!
-   * \brief Method to check if a JSON string is to be returned as response
-   * \return Boolean, True on success, False on Failure
-   */
-  public function isJson()
-  {
-    if($this->params['type'] == 'json')
-      {
-	return True;
-      }
-    else
-      {
-	return False;
-      }
-  }
 
   /*!
    * \brief Method to spit out JSON for webservice requests
@@ -414,15 +395,6 @@ class BaseController
 	}
   }
 
-  /*!
-   * \brief Method to convert JSON string to MS Excel
-   * \params $json - JSON string
-   * \return String data in xls format
-   */
-  public function json2xls($json)
-  {
-
-  }
 
   /*!
    * \brief Method to be called for actions in which login is mandatory
@@ -528,22 +500,26 @@ class BaseController
    * Convert an object to an array
    *
    * @param    object  $object The object to convert
-   * @reeturn      array
+   * @return   array
    *
    */
-  public function objectToArray( $object )
+  public function objectToArray($object)
   {
-    if( !is_object( $object ) && !is_array( $object ) )
+    if(!is_object($object) && !is_array($object))
       {
 	return $object;
       }
-    if( is_object( $object ) )
+    if(is_object($object))
       {
-	$object = get_object_vars( $object );
+	$object = get_object_vars($object);
       }
-    return array_map( 'objectToArray', $object );
+    return array_map('objectToArray', $object);
   }
 
+  /*!
+   * \brief Method to spit out CSV for webservice requests
+   * \param $data - Result set to be converted to CSV
+   */
   public function spitCSV($data) 
   {
     $filename = $this->params['controller'].'_'.$this->params['action'];
@@ -565,6 +541,11 @@ class BaseController
     exit;
   }
 
+  /*!
+   * \brief Method to generate Barcode
+   * \param $string - string for which barcode is to be generated
+   * \return <image> - returns image for barcode in PNG format
+   */
   public function generateBarcode($string)
   {
     $this->barcode39($string,500,120,100,'PNG',1);
