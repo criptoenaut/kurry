@@ -1,3 +1,22 @@
 Kurry Web Framework
 
 Need to punch in documentation to make this usable for everyone! Coming soon... as soon as I get a free weekend!
+
+Apache2 Rewrite rules to get it working:
+
+<pre>
+  RewriteEngine on
+    RewriteRule ^/javascript/(.*)$ /javascript/$1 [L,QSA]
+    RewriteRule ^/stylesheets/(.*)$ /stylesheets/$1 [L,QSA]
+    RewriteRule ^/assets/(.*)$ /assets/$1 [L,QSA]
+    RewriteRule ^/(.*)/(.*)/(.*)/$ /index.php?controller=$1&action=$2&id=$3&type=html [L,QSA]
+    RewriteRule ^/(.*)/(.*)/(.*)\.(.*)$ /index.php?controller=$1&action=$2&id=$3&type=$4 [L,QSA]
+    RewriteRule ^/(.*)/(.*)/(.*)$ /index.php?controller=$1&action=$2&id=$3&type=html [L,QSA]
+    RewriteRule ^/(.*)/(.*)/$ /index.php?controller=$1&action=$2&type=html [L,QSA]
+    RewriteRule ^/(.*)/$ /index.php?controller=$1&action=index&type=html [L,QSA]
+    RewriteRule ^/(.*)/(.*)\.(.*)$ /index.php?controller=$1&action=$2&type=$3 [L,QSA]
+    RewriteRule ^/(.*)/(.*)$ /index.php?controller=$1&action=$2&type=html [L,QSA]
+    RewriteRule ^/$ /index.php?controller=auth&action=index&type=html [L,QSA]
+    RewriteRule ^/(.*)\.(.*)$ /index.php?controller=$1&action=index&type=$2 [L,QSA]
+    RewriteRule ^/(.*)$ /index.php?controller=$1&action=index&type=html [L,QSA]
+</pre>
