@@ -4,7 +4,6 @@ Need to punch in documentation to make this usable for everyone! Coming soon... 
 
 Apache2 Rewrite rules to get it working:
 
-<pre>
   RewriteEngine on
     RewriteRule ^/javascript/(.*)$ /javascript/$1 [L,QSA]
     RewriteRule ^/stylesheets/(.*)$ /stylesheets/$1 [L,QSA]
@@ -19,4 +18,3 @@ Apache2 Rewrite rules to get it working:
     RewriteRule ^/$ /index.php?controller=auth&action=index&type=html [L,QSA]
     RewriteRule ^/(.*)\.(.*)$ /index.php?controller=$1&action=index&type=$2 [L,QSA]
     RewriteRule ^/(.*)$ /index.php?controller=$1&action=index&type=html [L,QSA]
-</pre>
